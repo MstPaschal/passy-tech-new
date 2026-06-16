@@ -9,21 +9,21 @@ function Stats() {
 
         <div>
           <h2 className="text-5xl font-bold text-cyan-400">
-            <CountUp end={120} duration={3} />+
+            120+
           </h2>
           <p className="text-slate-400 mt-2">Projects</p>
         </div>
 
         <div>
           <h2 className="text-5xl font-bold text-cyan-400">
-            <CountUp end={80} duration={3} />+
+            80+
           </h2>
           <p className="text-slate-400 mt-2">Clients</p>
         </div>
 
         <div>
           <h2 className="text-5xl font-bold text-cyan-400">
-            <CountUp end={5} duration={3} />+
+            5+
           </h2>
           <p className="text-slate-400 mt-2">Years</p>
         </div>
