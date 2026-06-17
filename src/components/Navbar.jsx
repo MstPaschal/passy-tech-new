@@ -48,11 +48,11 @@ function Navbar() {
           />
 
           <div>
-            <h1 className="text-white font-bold text-lg">
+            <h1 className="text-white font-bold text-xl leading-none">
               Passy Technologies
             </h1>
 
-            <p className="text-xs text-cyan-400">
+            <p className="text-sm text-cyan-400">
               Digital Solutions
             </p>
           </div>
@@ -130,7 +130,15 @@ function Navbar() {
         {/* MOBILE */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white"
+          className="
+            md:hidden
+            p-2
+            rounded-xl
+            bg-slate-800
+            text-white
+            border
+            border-slate-700
+          "
         >
           {open ? <X /> : <Menu />}
         </button>
@@ -139,13 +147,108 @@ function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 space-y-4 text-slate-300">
+        <div
+          className="
+            md:hidden
+            bg-slate-900/95
+            backdrop-blur-xl
+            border-t
+            border-slate-800
+            px-6
+            py-6
+            shadow-2xl
+          "
+        >
 
-          <Link to="/" onClick={() => setOpen(false)}>Home</Link>
-          <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
-          <Link to="/portfolio" onClick={() => setOpen(false)}>Portfolio</Link>
-          <Link to="/about" onClick={() => setOpen(false)}>About</Link>
-          <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <div className="flex flex-col gap-4">
+
+            <NavLink
+              to="/"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-xl transition ${
+                  isActive
+                    ? "bg-cyan-500 text-white"
+                    : "text-slate-300 hover:bg-slate-800"
+                }`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/services"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-xl transition ${
+                  isActive
+                    ? "bg-cyan-500 text-white"
+                    : "text-slate-300 hover:bg-slate-800"
+                }`
+              }
+            >
+              Services
+            </NavLink>
+
+            <NavLink
+              to="/portfolio"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-xl transition ${
+                  isActive
+                    ? "bg-cyan-500 text-white"
+                    : "text-slate-300 hover:bg-slate-800"
+                }`
+              }
+            >
+              Portfolio
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-xl transition ${
+                  isActive
+                    ? "bg-cyan-500 text-white"
+                    : "text-slate-300 hover:bg-slate-800"
+                }`
+              }
+            >
+              About
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-3 rounded-xl transition ${
+                  isActive
+                    ? "bg-cyan-500 text-white"
+                    : "text-slate-300 hover:bg-slate-800"
+                }`
+              }
+            >
+              Contact
+            </NavLink>
+
+            <button
+              className="
+                mt-4
+                w-full
+                bg-cyan-500
+                hover:bg-cyan-600
+                text-white
+                py-3
+                rounded-xl
+                font-semibold
+                transition
+              "
+            >
+              Start Project
+            </button>
+
+          </div>
 
         </div>
       )}
