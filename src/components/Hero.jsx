@@ -81,41 +81,6 @@ function Hero() {
 
             </div>
 
-            {/* STATS */}
-            <div className="flex flex-wrap gap-10 mt-12">
-
-              <div>
-                <h3 className="text-3xl font-bold text-white">
-                  120+
-                </h3>
-
-                <p className="text-slate-400">
-                  Projects
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-white">
-                  80+
-                </h3>
-
-                <p className="text-slate-400">
-                  Clients
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-white">
-                  5+
-                </h3>
-
-                <p className="text-slate-400">
-                  Years Experience
-                </p>
-              </div>
-
-            </div>
-
           </motion.div>
 
           {/* RIGHT SIDE */}
