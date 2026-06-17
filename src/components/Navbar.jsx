@@ -59,7 +59,21 @@ function Navbar() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex gap-8 text-slate-300">
+        <div
+          className="
+            hidden
+            md:flex
+            items-center
+            gap-8
+            px-6
+            py-3
+            rounded-full
+            bg-white/5
+            backdrop-blur-md
+            border
+            border-white/10
+          "
+        >
 
           <NavLink
             to="/"

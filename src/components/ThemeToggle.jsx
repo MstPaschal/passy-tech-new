@@ -3,21 +3,26 @@ import { ThemeContext } from "../context/ThemeContext";
 import { Sun, Moon } from "lucide-react";
 
 function ThemeToggle() {
-
-  const { theme, toggleTheme } =
-    useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 bg-slate-800 p-3 rounded-full shadow-lg"
+      className="
+        p-2
+        rounded-xl
+        bg-slate-800
+        hover:bg-slate-700
+        transition
+        border
+        border-slate-700
+      "
     >
-
-      {theme === "dark"
-        ? <Sun className="text-yellow-400" />
-        : <Moon className="text-cyan-400" />
-      }
-
+      {theme === "dark" ? (
+        <Sun size={20} className="text-yellow-400" />
+      ) : (
+        <Moon size={20} className="text-cyan-400" />
+      )}
     </button>
   );
 }
