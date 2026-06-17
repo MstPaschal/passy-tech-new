@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Hero() {
-
   return (
     <section className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden">
 
-      {/* BACKGROUND GLOW */}
+      {/* BACKGROUND GLOWS */}
       <div className="absolute inset-0">
 
         <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-cyan-500 rounded-full blur-[200px] opacity-30" />
@@ -19,12 +19,23 @@ function Hero() {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* LEFT TEXT */}
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+
+            {/* TRUST BADGE */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-6">
+
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+
+              <span className="text-cyan-300 text-sm">
+                Trusted by businesses across Nigeria
+              </span>
+
+            </div>
 
             <p className="text-cyan-400 font-semibold mb-4">
               PASSY TECHNOLOGIES
@@ -32,39 +43,82 @@ function Hero() {
 
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
 
-              We Build
-              <span className="text-cyan-400"> Digital Products </span>
-              That Grow Businesses
+              Transforming Ideas Into
+
+              <span className="block text-cyan-400">
+                Digital Experiences
+              </span>
+
+              That Drive Results
 
             </h1>
 
-            <p className="text-slate-400 mt-6 text-lg">
+            <p className="text-slate-400 mt-6 text-lg max-w-xl">
 
-              Websites, branding, graphics, video editing and digital solutions
-              designed to help your business stand out and convert more customers.
+              We build websites, create stunning brand identities,
+              design graphics, edit professional videos and deliver
+              digital solutions that help businesses grow faster.
 
             </p>
 
-            <div className="flex gap-4 mt-10">
+            {/* CTA BUTTONS */}
+            <div className="flex flex-wrap gap-4 mt-10">
 
-              <button className="bg-cyan-500 hover:bg-cyan-600 px-7 py-4 rounded-xl text-white font-semibold flex items-center gap-2">
-
+              <Link
+                to="/contact"
+                className="bg-cyan-500 hover:bg-cyan-600 px-7 py-4 rounded-xl text-white font-semibold flex items-center gap-2 transition"
+              >
                 Start a Project
                 <ArrowRight size={18} />
+              </Link>
 
-              </button>
-
-              <button className="border border-slate-700 px-7 py-4 rounded-xl text-white hover:bg-slate-800">
-
+              <Link
+                to="/services"
+                className="border border-slate-700 px-7 py-4 rounded-xl text-white hover:bg-slate-800 transition"
+              >
                 View Services
+              </Link>
 
-              </button>
+            </div>
+
+            {/* STATS */}
+            <div className="flex flex-wrap gap-10 mt-12">
+
+              <div>
+                <h3 className="text-3xl font-bold text-white">
+                  120+
+                </h3>
+
+                <p className="text-slate-400">
+                  Projects
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white">
+                  80+
+                </h3>
+
+                <p className="text-slate-400">
+                  Clients
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white">
+                  5+
+                </h3>
+
+                <p className="text-slate-400">
+                  Years Experience
+                </p>
+              </div>
 
             </div>
 
           </motion.div>
 
-          {/* RIGHT VISUAL CARD */}
+          {/* RIGHT SIDE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -72,41 +126,60 @@ function Hero() {
             className="relative"
           >
 
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-10 shadow-2xl">
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 shadow-2xl">
 
-              <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white mb-8">
+                Our Expertise
+              </h3>
 
-                <div className="flex items-center justify-between">
+              <div className="space-y-5">
 
-                  <span className="text-white">Web Development</span>
-                  <span className="text-cyan-400">95%</span>
+                <div className="bg-slate-800/60 rounded-2xl p-5">
 
-                </div>
+                  <h4 className="text-white font-semibold">
+                    Web Development
+                  </h4>
 
-                <div className="w-full bg-slate-800 h-2 rounded-full">
-                  <div className="w-[95%] bg-cyan-500 h-2 rounded-full"></div>
-                </div>
-
-                <div className="flex items-center justify-between">
-
-                  <span className="text-white">Design</span>
-                  <span className="text-cyan-400">90%</span>
+                  <p className="text-slate-400 text-sm mt-2">
+                    Corporate, School, Business and E-commerce Websites.
+                  </p>
 
                 </div>
 
-                <div className="w-full bg-slate-800 h-2 rounded-full">
-                  <div className="w-[90%] bg-purple-500 h-2 rounded-full"></div>
+                <div className="bg-slate-800/60 rounded-2xl p-5">
+
+                  <h4 className="text-white font-semibold">
+                    Graphic Design
+                  </h4>
+
+                  <p className="text-slate-400 text-sm mt-2">
+                    Branding, Flyers, Social Media and Marketing Materials.
+                  </p>
+
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="bg-slate-800/60 rounded-2xl p-5">
 
-                  <span className="text-white">Branding</span>
-                  <span className="text-cyan-400">88%</span>
+                  <h4 className="text-white font-semibold">
+                    Telecommunications
+                  </h4>
+
+                  <p className="text-slate-400 text-sm mt-2">
+                    Data, Airtime, Digital Services and Technology Solutions.
+                  </p>
 
                 </div>
 
-                <div className="w-full bg-slate-800 h-2 rounded-full">
-                  <div className="w-[88%] bg-cyan-500 h-2 rounded-full"></div>
+                <div className="bg-slate-800/60 rounded-2xl p-5">
+
+                  <h4 className="text-white font-semibold">
+                    Video Editing
+                  </h4>
+
+                  <p className="text-slate-400 text-sm mt-2">
+                    Professional video editing for brands and businesses.
+                  </p>
+
                 </div>
 
               </div>
@@ -115,6 +188,23 @@ function Hero() {
 
           </motion.div>
 
+        </div>
+
+      </div>
+
+      {/* FLOATING TAGS */}
+      <div className="hidden lg:block">
+
+        <div className="absolute top-32 right-20 px-4 py-2 rounded-full bg-cyan-500/20 border border-cyan-500/20 text-cyan-300">
+          Web Design
+        </div>
+
+        <div className="absolute bottom-32 right-12 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/20 text-purple-300">
+          Branding
+        </div>
+
+        <div className="absolute top-72 right-[500px] px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/20 text-blue-300">
+          Telecom
         </div>
 
       </div>
