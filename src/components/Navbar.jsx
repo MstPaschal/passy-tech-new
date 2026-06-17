@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 function Navbar() {
 
@@ -27,7 +29,15 @@ function Navbar() {
       }
     `}>
 
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="
+      max-w-7xl
+      mx-auto
+      px-6
+      h-20
+      flex
+      items-center
+      justify-between
+      ">
 
         {/* LOGO */}
         <h1 className="text-white font-bold text-2xl">
@@ -37,7 +47,14 @@ function Navbar() {
         {/* DESKTOP MENU */}
         <div className="hidden md:flex gap-8 text-slate-300">
 
-          <Link to="/" className="hover:text-cyan-400">Home</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "text-cyan-400 font-semibold"
+                : "text-slate-300 hover:text-cyan-400 transition"
+            }
+          >Home</NavLink>
           <Link to="/services" className="hover:text-cyan-400">Services</Link>
           <Link to="/portfolio" className="hover:text-cyan-400">Portfolio</Link>
           <Link to="/about" className="hover:text-cyan-400">About</Link>
@@ -46,9 +63,13 @@ function Navbar() {
         </div>
 
         {/* CTA BUTTON */}
-        <button className="hidden md:block bg-cyan-500 hover:bg-cyan-600 px-5 py-2 rounded-xl text-white">
-          Start Project
-        </button>
+        <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
+
+          <button className="bg-cyan-500 hover:bg-cyan-600 px-5 py-2 rounded-xl text-white transition">
+            Start Project
+          </button>
+        </div>
 
         {/* MOBILE */}
         <button
