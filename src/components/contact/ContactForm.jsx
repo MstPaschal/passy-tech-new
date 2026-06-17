@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     service: "",
+    budget: "",
     message: ""
   });
 
@@ -16,12 +20,43 @@ function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    try {
 
-    alert("Message sent successfully!");
+      await emailjs.send(
+        "service_3d6n9w6",
+        "template_4aqatuo",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          budget: formData.budget,
+          message: formData.message
+        },
+        "gx5b94BNiWR4Um0j3"
+      );
+
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        budget: "",
+        message: ""
+      });
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert("Failed to send message");
+
+    }
   };
 
   return (
@@ -29,75 +64,253 @@ function ContactForm() {
 
       <div className="max-w-4xl mx-auto px-6">
 
-        <div className="bg-slate-900 p-10 rounded-3xl border border-slate-800">
+        <div className="text-center mb-12">
 
-          <h2 className="text-3xl font-bold text-white mb-8">
+          <p className="text-cyan-400 font-semibold mb-3">
+            CONTACT US
+          </p>
 
-            Send Us A Message
-
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Let's Build Something Amazing
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
+          <p className="text-slate-400 mt-4">
+            Tell us about your project and we'll get back to you shortly.
+          </p>
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              onChange={handleChange}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 text-white"
-            />
+        </div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              onChange={handleChange}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 text-white"
-            />
+        <form
+          onSubmit={handleSubmit}
+          className="
+            bg-slate-900/60
+            backdrop-blur-xl
+            border
+            border-slate-800
+            rounded-3xl
+            p-8
+            md:p-10
+          "
+        >
+
+          <div className="grid md:grid-cols-2 gap-6">
+
+            <div>
+              <label className="block text-slate-300 mb-2">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="
+                  w-full
+                  bg-slate-800
+                  border
+                  border-slate-700
+                  rounded-xl
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  focus:border-cyan-500
+                "
+              />
+            </div>
+
+            <div>
+              <label className="block text-slate-300 mb-2">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="
+                  w-full
+                  bg-slate-800
+                  border
+                  border-slate-700
+                  rounded-xl
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  focus:border-cyan-500
+                "
+              />
+            </div>
+
+            <div>
+              <label className="block text-slate-300 mb-2">
+                Phone Number
+              </label>
+
+              <input
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="
+                  w-full
+                  bg-slate-800
+                  border
+                  border-slate-700
+                  rounded-xl
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  focus:border-cyan-500
+                "
+              />
+            </div>
+
+            <div>
+              <label className="block text-slate-300 mb-2">
+                Service Needed
+              </label>
+
+              <select
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                className="
+                  w-full
+                  bg-slate-800
+                  border
+                  border-slate-700
+                  rounded-xl
+                  px-4
+                  py-3
+                  text-white
+                  outline-none
+                  focus:border-cyan-500
+                "
+              >
+                <option value="">
+                  Select Service
+                </option>
+
+                <option>
+                  Website Development
+                </option>
+
+                <option>
+                  Graphic Design
+                </option>
+
+                <option>
+                  Video Editing
+                </option>
+
+                <option>
+                  Branding
+                </option>
+
+                <option>
+                  Digital Marketing
+                </option>
+
+              </select>
+            </div>
+
+          </div>
+
+          <div className="mt-6">
+
+            <label className="block text-slate-300 mb-2">
+              Budget Range
+            </label>
 
             <select
-              name="service"
+              name="budget"
+              value={formData.budget}
               onChange={handleChange}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 text-white"
+              className="
+                w-full
+                bg-slate-800
+                border
+                border-slate-700
+                rounded-xl
+                px-4
+                py-3
+                text-white
+                outline-none
+                focus:border-cyan-500
+              "
             >
+              <option value="">
+                Select Budget
+              </option>
 
-              <option>Select Service</option>
-
-              <option>Website Development</option>
-
-              <option>Graphic Design</option>
-
-              <option>Telecommunications</option>
-
-              <option>Video Editing</option>
-
-              <option>Digital Solutions</option>
+              <option>₦50,000 - ₦100,000</option>
+              <option>₦100,000 - ₦300,000</option>
+              <option>₦300,000 - ₦500,000</option>
+              <option>₦500,000+</option>
 
             </select>
+
+          </div>
+
+          <div className="mt-6">
+
+            <label className="block text-slate-300 mb-2">
+              Project Description
+            </label>
 
             <textarea
               rows="6"
               name="message"
-              placeholder="Tell us about your project"
+              value={formData.message}
               onChange={handleChange}
-              className="w-full bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 text-white"
+              placeholder="Tell us about your project..."
+              className="
+                w-full
+                bg-slate-800
+                border
+                border-slate-700
+                rounded-xl
+                px-4
+                py-3
+                text-white
+                outline-none
+                focus:border-cyan-500
+              "
             />
 
-            <button
-              type="submit"
-              className="bg-cyan-500 hover:bg-cyan-600 px-8 py-4 rounded-xl text-white font-semibold"
-            >
+          </div>
 
-              Send Message
+          <button
+            type="submit"
+            className="
+              mt-8
+              bg-cyan-500
+              hover:bg-cyan-600
+              text-white
+              px-8
+              py-4
+              rounded-xl
+              flex
+              items-center
+              gap-2
+              transition
+            "
+          >
 
-            </button>
+            Send Message
 
-          </form>
+            <Send size={18} />
 
-        </div>
+          </button>
+
+        </form>
 
       </div>
 
