@@ -83,10 +83,38 @@ function Navbar() {
                 : "text-slate-300 hover:text-cyan-400 transition"
             }
           >Home</NavLink>
-          <Link to="/services" className="hover:text-cyan-400">Services</Link>
-          <Link to="/portfolio" className="hover:text-cyan-400">Portfolio</Link>
-          <Link to="/about" className="hover:text-cyan-400">About</Link>
-          <Link to="/contact" className="hover:text-cyan-400">Contact</Link>
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive
+                ? "text-cyan-400 font-semibold"
+                : "text-slate-300 hover:text-cyan-400 transition"
+            }
+          >Services</NavLink>
+          <NavLink
+            to="/portfolio"
+            className={({ isActive }) =>
+              isActive
+                ? "text-cyan-400 font-semibold"
+                : "text-slate-300 hover:text-cyan-400 transition"
+            }
+          >Portfolio</NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "text-cyan-400 font-semibold"
+                : "text-slate-300 hover:text-cyan-400 transition"
+            }
+          >About</NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "text-cyan-400 font-semibold"
+                : "text-slate-300 hover:text-cyan-400 transition"
+            }
+          >Contact</NavLink>
 
         </div>
 
