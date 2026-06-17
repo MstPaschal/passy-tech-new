@@ -40,9 +40,23 @@ function Navbar() {
       ">
 
         {/* LOGO */}
-        <h1 className="text-white font-bold text-2xl">
-          Passy<span className="text-cyan-400">Tech</span>
-        </h1>
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="/PassyLogo.png"
+            alt="Passy Technologies"
+            className="h-12 w-auto"
+          />
+
+          <div>
+            <h1 className="text-white font-bold text-lg">
+              Passy Technologies
+            </h1>
+
+            <p className="text-xs text-cyan-400">
+              Digital Solutions
+            </p>
+          </div>
+        </Link>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex gap-8 text-slate-300">
