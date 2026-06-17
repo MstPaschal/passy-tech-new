@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import {
   FaFacebookF,
@@ -38,12 +39,52 @@ function Footer() {
               Quick Links
             </h3>
 
-            <ul className="space-y-3 text-slate-400">
+            <ul className="space-y-3">
 
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Contact</li>
+              <li>
+                <Link
+                  to="/"
+                  className="text-slate-400 hover:text-cyan-400 transition"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/about"
+                  className="text-slate-400 hover:text-cyan-400 transition"
+                >
+                  About
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/services"
+                  className="text-slate-400 hover:text-cyan-400 transition"
+                >
+                  Services
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/portfolio"
+                  className="text-slate-400 hover:text-cyan-400 transition"
+                >
+                  Portfolio
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-slate-400 hover:text-cyan-400 transition"
+                >
+                  Contact
+                </Link>
+              </li>
 
             </ul>
 
@@ -55,15 +96,59 @@ function Footer() {
               Connect
             </h3>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 text-xl">
 
-              <FaFacebookF className="text-slate-400 hover:text-cyan-400 cursor-pointer" />
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition"
+              >
+                <FaFacebookF />
+              </a>
 
-              <FaInstagram className="text-slate-400 hover:text-cyan-400 cursor-pointer" />
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition"
+              >
+                <FaInstagram />
+              </a>
 
-              <FaLinkedinIn className="text-slate-400 hover:text-cyan-400 cursor-pointer" />
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-cyan-400 transition"
+              >
+                <FaLinkedinIn />
+              </a>
 
-              <Mail className="text-slate-400 hover:text-cyan-400 cursor-pointer" />
+              <a
+                href="mailto:contact.passytechnologies@gmail.com"
+                className="text-slate-400 hover:text-cyan-400 transition"
+              >
+                <Mail size={20} />
+              </a>
+
+            </div>
+
+          </div>
+
+          <div>
+
+            <h3 className="text-white font-semibold mb-4">
+              Contact Info
+            </h3>
+
+            <div className="space-y-3 text-slate-400">
+
+              <p>Anambra, Nigeria</p>
+
+              <p>contact.passytechnologies@gmail.com</p>
+
+              <p>+234 703 236 9453</p>
 
             </div>
 
