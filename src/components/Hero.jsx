@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden pt-24 md:pt-28">
 
       {/* BACKGROUND GLOWS */}
       <div className="absolute inset-0">
