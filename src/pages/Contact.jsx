@@ -7,10 +7,20 @@ import ContactInfo from "../components/contact/ContactInfo";
 import ContactForm from "../components/contact/ContactForm";
 import BusinessHours from "../components/contact/BusinessHours";
 import FAQ from "../components/contact/FAQ";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
   return (
     <>
+
+      <Helmet>
+        <title>Contact Us | Web Design & Digital Solutions</title>
+        <meta
+          name="description"
+          content="Passy Technologies provides website development, graphic design, branding, telecommunications solutions, digital marketing, and other technology services."
+        />
+      </Helmet>
+
       <Navbar />
 
       <ContactHero />

@@ -5,10 +5,20 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import PortfolioHero from "../components/portfolio/PortfolioHero";
 import ProjectsGrid from "../components/portfolio/ProjectsGrid";
 import PortfolioStats from "../components/portfolio/PortfolioStats";
+import { Helmet } from "react-helmet-async";
 
 function Portfolio() {
   return (
     <>
+
+      <Helmet>
+        <title>Portfolio | Web Design & Digital Solutions</title>
+        <meta
+          name="description"
+          content="Passy Technologies provides website development, graphic design, branding, telecommunications solutions, digital marketing, and other technology services."
+        />
+      </Helmet>
+
       <Navbar />
 
       <PortfolioHero />

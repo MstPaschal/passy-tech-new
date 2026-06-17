@@ -8,10 +8,20 @@ import WorkProcess from "../components/services/WorkProcess";
 import TechStack from "../components/services/TechStack";
 import Pricing from "../components/services/Pricing";
 import ServiceFAQ from "../components/services/ServiceFAQ";
+import { Helmet } from "react-helmet-async";
 
 function Services() {
   return (
     <>
+
+      <Helmet>
+        <title>Our Services | Web Design & Digital Solutions</title>
+        <meta
+          name="description"
+          content="Passy Technologies provides website development, graphic design, branding, telecommunications solutions, digital marketing, and other technology services."
+        />
+      </Helmet>
+
       <Navbar />
 
       <ServicesHero />
