@@ -32,7 +32,7 @@ function App() {
 
       {!loading && (
 
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
 
           <Routes
             location={location}
