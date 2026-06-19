@@ -8,10 +8,13 @@ import ContactForm from "../components/contact/ContactForm";
 import BusinessHours from "../components/contact/BusinessHours";
 import FAQ from "../components/contact/FAQ";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "../components/PageTransition";
 
 function Contact() {
   return (
     <>
+
+      <PageTransition>
 
       <Helmet>
         <title>Contact Us | Web Design & Digital Solutions</title>
@@ -38,6 +41,8 @@ function Contact() {
       <Footer />
 
       <WhatsAppButton />
+
+      </PageTransition>
     </>
   );
 }

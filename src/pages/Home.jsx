@@ -9,10 +9,13 @@ import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "../components/PageTransition";
 
 function Home() {
   return (
     <>
+
+      <PageTransition>
 
       <Helmet>
         <title>Passy Technologies | Web Design & Digital Solutions</title>
@@ -41,6 +44,8 @@ function Home() {
       <Footer />
 
       <WhatsAppButton />
+
+      </PageTransition>
     </>
   );
 }

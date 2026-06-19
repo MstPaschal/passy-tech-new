@@ -6,10 +6,13 @@ import PortfolioHero from "../components/portfolio/PortfolioHero";
 import ProjectsGrid from "../components/portfolio/ProjectsGrid";
 import PortfolioStats from "../components/portfolio/PortfolioStats";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "../components/PageTransition";
 
 function Portfolio() {
   return (
     <>
+
+      <PageTransition>
 
       <Helmet>
         <title>Portfolio | Web Design & Digital Solutions</title>
@@ -32,6 +35,8 @@ function Portfolio() {
       <Footer />
 
       <WhatsAppButton />
+
+      </PageTransition>
     </>
   );
 }

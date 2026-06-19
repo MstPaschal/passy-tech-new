@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -9,23 +10,46 @@ import Contact from "./pages/Contact";
 import Loader from "./components/Loader";
 
 function App() {
+
   const location = useLocation();
+
+  const [loading, setLoading] =
+    useState(true);
+
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+
+  }, []);
 
   return (
     <>
-      <Loader />
-      
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+      <Loader loading={loading} />
 
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+      {!loading && (
 
-        </Routes>
-      </AnimatePresence>
+        <AnimatePresence mode="wait">
+
+          <Routes
+            location={location}
+            key={location.pathname}
+          >
+
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+
+          </Routes>
+
+        </AnimatePresence>
+
+      )}
     </>
   );
 }

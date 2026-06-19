@@ -8,10 +8,13 @@ import MissionVision from "../components/about/MissionVision";
 import CoreValues from "../components/about/CoreValues";
 import WhyTrustUs from "../components/about/WhyTrustUs";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "../components/PageTransition";
 
 function About() {
   return (
     <>
+
+      <PageTransition>
 
       <Helmet>
         <title>About Us | Web Design & Digital Solutions</title>
@@ -38,6 +41,8 @@ function About() {
       <Footer />
 
       <WhatsAppButton />
+
+      </PageTransition>
     </>
   );
 }

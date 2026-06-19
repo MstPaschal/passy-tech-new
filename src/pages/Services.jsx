@@ -9,10 +9,13 @@ import TechStack from "../components/services/TechStack";
 import Pricing from "../components/services/Pricing";
 import ServiceFAQ from "../components/services/ServiceFAQ";
 import { Helmet } from "react-helmet-async";
+import PageTransition from "../components/PageTransition";
 
 function Services() {
   return (
     <>
+
+      <PageTransition>
 
       <Helmet>
         <title>Our Services | Web Design & Digital Solutions</title>
@@ -41,6 +44,8 @@ function Services() {
       <Footer />
 
       <WhatsAppButton />
+
+      </PageTransition>
     </>
   );
 }
