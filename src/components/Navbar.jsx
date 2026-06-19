@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ThemeToggle from "./ThemeToggle";
 
 function Navbar() {
 
@@ -120,8 +119,6 @@ function Navbar() {
 
         {/* CTA BUTTON */}
         <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
-
           <button className="bg-cyan-500 hover:bg-cyan-600 px-5 py-2 rounded-xl text-white transition">
             Start Project
           </button>
