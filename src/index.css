@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #020617;
 }
 
 body {
@@ -9,12 +10,9 @@ body {
   background-color: #020617;
 }
 
-html.dark body {
-  background: #020617;
-}
-
-html:not(.dark) body {
-  background: #f8fafc;
+#root {
+  background-color: #020617;
+  min-height: 100vh;
 }
 
 * {

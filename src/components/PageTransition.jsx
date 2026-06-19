@@ -5,20 +5,19 @@ function PageTransition({ children }) {
     <motion.div
       initial={{
         opacity: 0,
-        y: 20,
+        x: 100,
       }}
       animate={{
         opacity: 1,
-        y: 0,
+        x: 0,
       }}
       exit={{
-        opacity: 1,
-        y: 0,
+        opacity: 0,
+        x: -100,
       }}
       transition={{
-        duration: 0.4,
+        duration: 0.8,
       }}
-      className="min-h-screen bg-slate-950"
     >
       {children}
     </motion.div>
