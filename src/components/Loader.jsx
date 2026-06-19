@@ -14,7 +14,7 @@ function Loader({ loading }) {
           className="
             fixed
             inset-0
-            bg-slate-950
+            bg-red-500
             flex
             items-center
             justify-center
