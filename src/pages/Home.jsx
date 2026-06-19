@@ -23,6 +23,18 @@ function Home() {
           name="description"
           content="Passy Technologies provides website development, graphic design, branding, telecommunications solutions, digital marketing, and other technology services."
         />
+
+        <script type="application/ld+json">
+        {`
+        {
+          "@context":"https://schema.org",
+          "@type":"Organization",
+          "name":"Passy Technologies",
+          "url":"https://paschal.name.ng",
+          "logo":"https://paschal.name.ng/PassyLogo.png"
+        }
+        `}
+        </script>
       </Helmet>
 
       <Navbar />
