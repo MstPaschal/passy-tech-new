@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paschal.name.ng/sitemap.xml
